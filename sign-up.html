@@ -1,0 +1,105 @@
+
+<!doctype html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Securely buy and sell cryptocurrencies with ease on our trusted platform. Get real-time prices, fast transactions, and 24/7 support. Start trading Bitcoin, Ethereum, and more today!" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Sign Up - Middleman - Sell Giftcards</title>
+  <script defer src="js/app.js"></script><link href="css/index.css" rel="stylesheet"></head>
+
+  <body>
+    <!-- loader -->
+    <div
+  x-show="loading"
+  x.transition.opacity
+  x-data="{
+        loading:true, 
+        hideLoader(){
+          document.addEventListener('DOMContentLoaded', ()=> { 
+            setTimeout(() => {
+              this.loading = false
+            }, 300); 
+          })
+         }
+        }"
+  x-init="hideLoader()"
+  class="duration-700 fixed inset-0 z-[60] grid place-content-center bg-accent5"
+>
+  <div class="loader"></div>
+</div>
+
+    <!-- Main Content -->
+    <main>
+      <section class="bg-accent2 relative overflow-x-hidden py-5 xxl:py-6 min-h-screen after:w-[45%] after:h-full after:absolute after:top-0 after:right-0 after:bottom-0 xl:after:bg-accent5">
+        <div class="max-lg:hidden z-[1] w-[250px] h-[300px] absolute bottom-0 blur-[85px] left-[-6%] bg-accent1/50"></div>
+        <div class="max-lg:hidden z-[1] w-[250px] h-[300px] absolute bottom-0 blur-[85px] right-[-8%] bg-accent1/50"></div>
+        <img class="max-lg:hidden z-[1] absolute left-[2%] bottom-0" src="./assets/images/how-start-el-2.png" alt="" />
+        <img class="max-lg:hidden z-[1] absolute right-0 bottom-0" src="./assets/images/sign-up-el.png" alt="" />
+        <a href="index.html" class="px-4 mb-4 flex"><img src="./assets/images/logo.png" alt="" /></a>
+        <div class="container grid grid-cols-12 gap-4 items-center relative z-[2]">
+          <div class="col-span-12 lg:col-span-6 p-4 md:p-6 xxl:p-8 rounded-2xl border bg-accent2 border-accent4">
+            <h2 class="mb-7 xl:mb-10 text-center">Sign Up</h2>
+            <div class="grid grid-cols-2 gap-5 mb-5 xl:mb-8">
+              <a href="#" class="col-span-2 xl:col-span-1 px-4 py-3 rounded-xl border border-accent4 flex items-center gap-2.5">
+                <img src="./assets/images/google.png" alt="" />
+                <span class="text-sm xxl:text-base">Continue with Google</span>
+              </a>
+              <a href="#" class="col-span-2 xl:col-span-1 px-4 py-3 rounded-xl border border-accent4 flex items-center gap-2.5">
+                <img width="32" src="./assets/images/facebook.png" alt="" />
+                <span class="text-sm xxl:text-base">Continue with Facebook</span>
+              </a>
+            </div>
+            <div class="flex gap-4 mb-5 xl:mb-8 items-center">
+              <div class="col-span-1 h-[1px] bg-neutral4/20 grow"></div>
+              <span class="text-lg font-medium">or</span>
+              <div class="col-span-1 h-[1px] bg-neutral4/20 grow"></div>
+            </div>
+            <div class="grid grid-cols-2 gap-6">
+              <div class="col-span-2 md:col-span-1">
+                <label for="name" class="mb-3 font-medium block">First Name*</label>
+                <input type="text" placeholder="First Name" class="w-full focus:border-primary bg-transparent border border-accent4 p-3 xl:p-4 rounded-xl col-span-2 md:col-span-1" />
+              </div>
+              <div class="col-span-2 md:col-span-1">
+                <label for="name" class="mb-3 font-medium block">Last Name*</label>
+                <input type="text" placeholder="Last Name" class="w-full focus:border-primary bg-transparent border border-accent4 p-3 xl:p-4 rounded-xl col-span-2 md:col-span-1" />
+              </div>
+              <div class="col-span-2 md:col-span-1">
+                <label for="name" class="mb-3 font-medium block">Your Email*</label>
+                <input type="text" placeholder="Your Email" class="w-full focus:border-primary bg-transparent border border-accent4 p-3 xl:p-4 rounded-xl col-span-2 md:col-span-1" />
+              </div>
+              <div class="col-span-2 md:col-span-1">
+                <label for="name" class="mb-3 font-medium block">Phone Number*</label>
+                <input type="text" placeholder="Phone Number" class="w-full focus:border-primary bg-transparent border border-accent4 p-3 xl:p-4 rounded-xl col-span-2 md:col-span-1" />
+              </div>
+              <div x-data="{show: false}" class="col-span-2 mb-2">
+                <label for="name" class="mb-3 font-medium block">Your Password*</label>
+                <div class="w-full focus-within:border-primary bg-transparent relative border border-accent4 p-3 xl:p-4 rounded-xl col-span-2 md:col-span-1 mb-3">
+                  <input placeholder="Password" :type="show?'text':'password'" class="w-full bg-transparent" />
+                  <button x-on:click="show = !show" class="text-xl absolute right-3 top-1/2 -translate-y-1/2">
+                    <i x-show="show" class="ti ti-eye"></i>
+                    <i x-show="!show" class="ti ti-eye-off"></i>
+                  </button>
+                </div>
+                <div class="flex gap-2">
+                  <input type="checkbox" id="agree" class="accent-neutral1 scale-125" />
+                  <label for="agree"> I agree with <a href="terms.html" class="underline font-medium">Terms &amp; Conditions</a></label>
+                </div>
+              </div>
+              <div class="col-span-2">
+                <button class="py-3 px-5 w-full rounded-xl text-lg bg-primary font-medium mb-3">Sign Up</button>
+                <p class="text-center">Get trouble signing up? <a href="contact.html" class="underline">Contact Us</a></p>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-12 lg:col-span-6">
+            <img src="img/sign-up.png" class="xxl:translate-x-16 xxxl:translate-x-32 4xl:translate-x-44" alt="" />
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

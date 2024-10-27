@@ -1,0 +1,490 @@
+
+<!doctype html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Securely buy and sell cryptocurrencies with ease on our trusted platform. Get real-time prices, fast transactions, and 24/7 support. Start trading Bitcoin, Ethereum, and more today!" />
+    <link rel="shortcut icon" href="./assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <title>Home - Middleman - Sell Giftcards - Rates</title>
+  <script defer src="js/app.js"></script><link href="css/index.css" rel="stylesheet"></head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <body>
+    <!-- loader -->
+    <div
+  x-show="loading"
+  x.transition.opacity
+  x-data="{
+        loading:true, 
+        hideLoader(){
+          document.addEventListener('DOMContentLoaded', ()=> { 
+            setTimeout(() => {
+              this.loading = false
+            }, 300); 
+          })
+         }
+        }"
+  x-init="hideLoader()"
+  class="duration-700 fixed inset-0 z-[60] grid place-content-center bg-accent5"
+>
+  <div class="loader"></div>
+</div>
+
+    <!-- header -->
+    <header
+  x-data="{
+        scrolled:false, 
+        mobileMenu:false,
+        initScroll(){
+          this.scrolled=document.documentElement.scrollTop > 20;
+          window.addEventListener('scroll', () => {this.scrolled = window.scrollY > 20})
+          
+          const currentPath = window.location.pathname; 
+          const menuLinks = document.querySelectorAll('.menu-link'); 
+
+          menuLinks.forEach(link => {
+          const linkPath = link.getAttribute('href');  
+          
+          if (currentPath.endsWith(linkPath)) {
+              link.classList.add('text-primary'); 
+              if( link.parentElement.parentElement.previousElementSibling.classList.contains('submenu-btn')){
+                link.parentElement.parentElement.previousElementSibling.classList.add('text-primary');
+              }
+
+          }
+         });
+        }
+      }"
+  x-init="initScroll()"
+  :class="scrolled?'bg-accent2':''"
+  class="z-10 py-4 xxl:py-6 border-b border-neutral4/15 fixed top-0 left-0 right-0 w-full"
+>
+  <div x-data="modal" class="container flex justify-between items-center">
+    <a href="index.html" aria-label="Home link">
+      <img src="./assets/images/logo.png" class="max-sm:w-28" alt="Site logo icon" />
+    </a>
+    <ul class="hidden lg:flex gap-3 lg:gap-4 xxl:gap-8 xl:text-lg">
+        <!-- <li>
+           <a class="lg:text-lg py-2 inline-flex menu-link" href="buy-crypto.html">Buy Crypto</a>
+         </li>-->
+         <li>
+           <a class="lg:text-lg py-2 inline-flex menu-link" href="sign-up.html">Sell GiftCards</a>
+         </li>
+       <!--  <li>
+           <a class="lg:text-lg py-2 inline-flex menu-link" href="swap.html">Swap</a>
+         </li>-->
+         <li>
+           <a class="lg:text-lg py-2 inline-flex menu-link" href="rates.html">Rates</a>
+         </li>
+        <li>
+           <a class="lg:text-lg py-2 inline-flex menu-link" href="sign-up.html">Earn</a>
+         </li>
+    
+         <li>
+           <a class="lg:text-lg py-2 inline-flex menu-link" href="sign-up.html">sign-up</a>
+         </li>
+   
+        <!-- <li class="relative group">
+           <button class="lg:text-lg py-2 inline-flex items-center gap-1 submenu-btn">Pages <i class="ti ti-chevron-down"></i></button>
+           <ul class="group-hover:event-unset pointer-events-none invisible absolute left-0 top-full min-w-[200px] max-h-[250px] bg-accent5 p-3 text-n2 opacity-0 duration-300 group-hover:visible group-hover:top-full group-hover:opacity-100 lg:px-5 rounded-lg border border-accent4 overflow-y-auto">
+             <li><a class="inline-flex py-1.5 lg:text-base menu-link hover:text-primary duration-300" href="blog-list.html">Blog List</a></li>
+             <li><a class="inline-flex py-1.5 lg:text-base menu-link hover:text-primary duration-300" href="blog-grid.html">Blog Grid</a></li>
+             <li><a class="inline-flex py-1.5 lg:text-base menu-link hover:text-primary duration-300" href="blog-details.html">Blog Details</a></li>
+             <li><a class="inline-flex py-1.5 lg:text-base menu-link hover:text-primary duration-300" href="personal-info.html">User Profile</a></li>
+             <li><a class="inline-flex py-1.5 lg:text-base menu-link hover:text-primary duration-300" href="event.html">Event</a></li>
+             <li><a class="inline-flex py-1.5 lg:text-base menu-link hover:text-primary duration-300" href="contact.html">Contact</a></li>
+             <li><a class="inline-flex py-1.5 lg:text-base menu-link hover:text-primary duration-300" href="faq.html">Faqs</a></li>
+             <li><a class="inline-flex py-1.5 lg:text-base menu-link hover:text-primary duration-300" href="pricing-plan.html">Pricing Plan</a></li>
+             <li><a class="inline-flex py-1.5 lg:text-base hover:text-primary duration-300" href="sign-up.html">Sign Up</a></li>
+             <li><a class="inline-flex py-1.5 lg:text-base hover:text-primary duration-300" href="log-in.html">Log In</a></li>
+             <li><a class="inline-flex py-1.5 lg:text-base menu-link hover:text-primary duration-300" href="terms.html">Terms &amp; Conditions</a></li>
+             <li><a class="inline-flex py-1.5 lg:text-base hover:text-primary duration-300" href="404.html">404</a></li>
+           </ul>
+         </li>-->
+       </ul>
+    <div class="flex gap-3 items-center">
+        <a href="login.html">
+        <button  class="btn-primary">Login</button></a>
+      <button @click="mobileMenu=!mobileMenu" class="text-2xl lg:hidden"><i class="fa fa-bars"></i></button>
+    </div>
+    <template x-teleport="body">
+      <div class="fixed inset-0 z-[999] hidden overflow-y-auto bg-accent2/80 text-neutral1" :class="isOpen && '!block'">
+        <div class="flex min-h-screen items-center justify-center px-3" @click.self="closeModal">
+          <div x-show="isOpen" x-transition x-transition.duration.300 class="my-8 w-full max-w-[856px] border border-accent4 overflow-hidden rounded-xl bg-accent5 p-3 sm:p-4 md:p-6 xl:p-8 xxl:p-10">
+            <div class="mb-7 xl:mb-10 flex items-center justify-between">
+              <div>
+                <h3 class="mb-3">Connect Wallet</h3>
+                <p class="text-neutral4 lg:text-lg">Gateway to Web3</p>
+              </div>
+              <button @click="closeModal" class="size-10 rounded-full hover:rotate-180 duration-300 bg-accent4 f-center">
+                <i class="ti ti-x text-xl"></i>
+              </button>
+            </div>
+            <div x-data="{activeTab:'critox'}">
+              <div class="grid grid-cols-2 gap-6 xl:gap-10 xxxl:gap-20 mb-7 xl:mb-10">
+                <button :class="activeTab=='critox'?'border-secondary':'border-transparent'" class="col-span-1 border-b py-1.5 text-base md:text-lg xl:text-2xl font-medium" @click="activeTab='critox'">Critox Wallet</button>
+                <button :class="activeTab=='other'?'border-secondary':'border-transparent'" class="col-span-1 border-b py-1.5 text-base md:text-lg xl:text-2xl font-medium" @click="activeTab='other'">Other</button>
+              </div>
+              <div x-show="activeTab=='critox'">
+                <div class="p-4 md:p-6 xl:p-8 rounded-xl border border-accent4 gap-4 flex-wrap flex justify-between items-center mb-6">
+                  <div class="flex gap-3 items-center">
+                    <img src="./assets/images/icon.png" alt="" />
+                    <h4>Critox Wallet</h4>
+                  </div>
+                  <button class="bg-primary rounded-3xl px-5 py-2.5 text-sm xl:text-lg font-medium">Install Plugin</button>
+                </div>
+                <div class="p-4 md:p-6 xl:p-8 flex-wrap gap-4 rounded-xl bg-neutral1/5 border border-accent4 flex justify-between items-center">
+                  <div>
+                    <h4 class="mb-2">Scan with CritoX Wallet</h4>
+                    <p class="lg:text-lg text-neutral4 mb-6">Scan QR code with CritoX App Web3 to connect</p>
+                    <a href="#" class="inline-flex py-2 px-5 rounded-full border border-primary hover:bg-primary duration-300">Download CritoX App</a>
+                  </div>
+                  <img src="./assets/images/qr-code.png" alt="" />
+                </div>
+              </div>
+              <div x-show="activeTab=='other'">
+                <div class="p-4 md:p-6 xl:p-8 rounded-xl gap-4 flex-wrap border border-accent4 flex justify-between items-center mb-6">
+                  <div class="flex gap-3 items-center">
+                    <img src="./assets/images/metamask.png" alt="" />
+                    <h4>Metamask</h4>
+                  </div>
+                  <button class="bg-primary rounded-3xl px-5 py-2.5 text-sm xl:text-lg font-medium">Install Plugin</button>
+                </div>
+                <div class="grid grid-cols-12 gap-4">
+                  <a href="#" class="col-span-12 sm:col-span-4 p-4 md:p-6 xl:px-8 xl:py-12 rounded-xl border border-accent4 hover:bg-neutral1/5 duration-300 flex flex-col items-center gap-4">
+                    <img src="./assets/images/walletconnect.png" alt="" />
+                    <h4>WalletConnect</h4>
+                  </a>
+                  <a href="#" class="col-span-12 sm:col-span-4 p-4 md:p-6 xl:px-8 xl:py-12 rounded-xl border border-accent4 hover:bg-neutral1/5 duration-300 flex flex-col items-center gap-4">
+                    <img src="./assets/images/coinbase.png" alt="" />
+                    <h4>Coinbase</h4>
+                  </a>
+                  <a href="#" class="col-span-12 sm:col-span-4 p-4 md:p-6 xl:px-8 xl:py-12 rounded-xl border border-accent4 hover:bg-neutral1/5 duration-300 flex flex-col items-center gap-4">
+                    <img src="./assets/images/safepal.png" alt="" />
+                    <h4>Safepal</h4>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </template>
+  </div>
+  <!-- mobile menu -->
+  <div :class="mobileMenu?'translate-x-0':'-translate-x-full'" class="absolute h-screen overflow-y-auto bg-accent5 lg:hidden top-0 left-0 z-50 duration-300 p-4 w-[300px]">
+    <div class="flex justify-between items-center">
+      <a href="index.html"><img src="./assets/images/logo.png" class="max-sm:w-28" alt="" /></a>
+      <button @click="mobileMenu = false" class="text-xl"><i class="fa fa-bars"></i></button>
+    </div>
+    <ul class="flex flex-col gap-3 lg:gap-4 mt-4">
+        <li>
+          <a class="py-1 inline-flex menu-link" href="sign-up.html">Sell GiftCards</a>
+        </li>
+        <li>
+          <a class="py-1 inline-flex menu-link" href="rates.html">Rates</a>
+        </li>
+        <li>
+          <a class="py-1 inline-flex menu-link" href="sign-up.html">Earn</a>
+        </li>
+        <li>
+          <a class="py-1 inline-flex menu-link" href="sign-up.html">sign-up</a>
+        </li>
+        <li>
+          <a class="py-1 inline-flex menu-link" href="login.html">Login</a>
+        </li>
+        
+      </ul>
+  </div>
+  <div x-show="mobileMenu" @click="mobileMenu = false" class="fixed bg-neutral1/10 z-20 w-full h-full inset-0 lg:hidden"></div>
+</header>
+
+
+    <!-- go to top -->
+    <div
+  x-data="{
+      scrolled:false,
+      gotoTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }, 
+      onScroll() {
+        document.addEventListener('scroll', () => {this.scrolled = document.body.scrollTop > 80 || document.documentElement.scrollTop > 80})
+      }
+    }"
+  x-init="onScroll()"
+  class="fixed bottom-5 right-5 xl:right-7 xl:bottom-7 z-30"
+>
+  <button :class="scrolled?'translate-y-0':'translate-y-[300px]'" class="size-12 ease-bounce duration-500 f-center rounded-full bg-primary shadow-xl text-2xl" @click="gotoTop()"><i class="ti ti-arrow-up"></i></button>
+</div>
+
+
+    <main>
+      <!-- breadcrumb -->
+      <section class="pt-[69px] sm:pt-[82px] xxl:pt-[98px] relative overflow-x-hidden bg-accent6">
+        <div class="w-[100px] xxl:w-[220px] h-[100px] xxl:h-[220px] absolute bottom-0 blur-[85px] left-[-12%] bg-primary/50"></div>
+        <div class="w-[100px] xxl:w-[220px] h-[100px] xxl:h-[220px] absolute top-0 blur-[85px] right-[-8%] bg-accent1/50"></div>
+        <img class="max-xxxl:hidden absolute right-[5%] top-[38%] animate-slow-rotate" src="./assets/images/globe.png" alt="" />
+        <img class="max-xxxl:hidden absolute left-[2%] xxxl:left-[5%] top-[30%] animate-slow-rotate-reverse" src="./assets/images/coin-1.png" alt="" />
+        <img class="max-xxxl:hidden absolute left-0 bottom-0" src="./assets/images/breadcrumb-ellipse-1.png" alt="" />
+        <img class="max-xxxl:hidden absolute right-0 top-0" src="./assets/images/breadcrumb-ellipse-2.png" alt="" />
+        <div
+          class="container py-16 md:py-20 lg:py-28 grid grid-cols-12 gap-4 items-center relative z-[2] bg-no-repeat bg-right bg-contain max-sm:after:w-full max-sm:after:h-full max-sm:after:absolute max-sm:after:inset-0 max-sm:after:bg-accent2/60"
+          style="background-image: url('./assets/images/breadcrumb.png')"
+        >
+          <div class="col-span-12 lg:col-span-7 xl:col-span-8 relative z-[2]">
+            <h2 class="fade_up_anim display-4 mb-3 xl:mb-5">GiftCards Rates Calculator</h2>
+            <ul data-delay="0.25" class="fade_up_anim flex items-center gap-2">
+              <li class="text-accent1 text-xl"><i class="fa fa-home"></i></li>
+              <li class="lg:text-xl font-medium">Home /</li>
+              <li class="text-accent1 lg:text-xl font-medium">Rate</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- market overview -->
+      <section class="bg-accent2">
+        <div class="container pt-120 pb-120">
+         
+
+          <form class="mb-10 xl:mb-[60px] grid grid-cols-12 gap-6 bg-accent5 p-4 xl:p-6 xxl:p-8 rounded-xl">
+           
+            <div class="col-span-12 md:col-span-6 xl:col-span-3">
+              <select class="select" name="GiftCards">
+                <option value="all">iTunes</option>
+                <option value="flexible">Amazon</option>
+                <option value="fixed">razor</option>
+                <option value="fixed">steam</option>
+              </select>
+            </div>
+            <div class="col-span-12 md:col-span-6 xl:col-span-3">
+              <select class="select" name="Currency">
+                <option value="all">USD</option>
+                <option value="protected">EUR</option>
+                <option value="high">JPY</option>
+              </select>
+            </div>
+            <div class="col-span-12 md:col-span-6 xl:col-span-3">
+                <div class="flex gap-2 items-center rounded-xl border border-accent4 px-4 py-3.5 focus-within:border-primary">
+                  
+                  <input type="text" placeholder="Amount" class="w-full bg-transparent" />
+                </div>
+              </div>
+            <div class="col-span-12 md:col-span-6 xl:col-span-3 flex items-center gap-3">
+                <button class="btn-primary">Calculate</button>
+            </div>
+          </form>
+
+          <h3 class="mb-5 xl:mb-8">Rates</h3>
+
+          <div class="overflow-x-auto mb-10 xl:mb-[60px]">
+            <div class="w-full whitespace-nowrap min-w-[700px]">
+              <div class="bg-accent6 text-start flex px-6 py-4">
+                <p class="w-1/4">GiftCard</p>
+                <p class="w-1/4">Rate</p>
+                <p class="w-1/4">Change</p>
+              </div>
+
+              <div x-data="{ open: false }">
+                <div class="flex py-3 px-6 items-center hover:bg-accent5 duration-300">
+                  <div class="flex items-center gap-2 w-1/4">
+                    <img src="img/apple.png" width="32" alt="" />
+                    <p class="text-neutral1 font-medium">iTunes <span class="text-xs text-neutral4/70">GiftCard</span></p>
+                  </div>
+                  <p class="w-1/4 text-accent1">0.83%~126.41%</p>
+                  <p class="w-1/4">Flexible/Fixed</p>
+                  
+                </div>
+               
+              </div>
+              <div x-data="{ open: false }">
+                <div class="flex py-3 px-6 items-center hover:bg-accent5 duration-300">
+                  <div class="flex items-center gap-2 w-1/4">
+                    <img src="img/amazon.png" width="32" alt="" />
+                    <p class="text-neutral1 font-medium">Amazon <span class="text-xs text-neutral4/70">GiftCard</span></p>
+                  </div>
+                  <p class="w-1/4 text-accent1">0.83%~126.41%</p>
+                  <p class="w-1/4">Flexible/Fixed</p>
+                  
+                </div>
+               
+              </div>
+              <div x-data="{ open: false }">
+                <div class="flex py-3 px-6 items-center hover:bg-accent5 duration-300">
+                  <div class="flex items-center gap-2 w-1/4">
+                    <img src="img/Razor.png" width="32" alt="" />
+                    <p class="text-neutral1 font-medium">Razor <span class="text-xs text-neutral4/70">GiftCard</span></p>
+                  </div>
+                  <p class="w-1/4 text-accent1">0.83%~126.41%</p>
+                  <p class="w-1/4">Flexible/Fixed</p>
+                 
+                </div>
+               
+              </div>
+              <div x-data="{ open: false }">
+                <div class="flex py-3 px-6 items-center hover:bg-accent5 duration-300">
+                  <div class="flex items-center gap-2 w-1/4">
+                    <img src="img/apple.png" width="32" alt="" />
+                    <p class="text-neutral1 font-medium">ETH <span class="text-xs text-neutral4/70">Ethereum</span></p>
+                  </div>
+                  <p class="w-1/4 text-accent1">0.83%~126.41%</p>
+                  <p class="w-1/4">Flexible/Fixed</p>
+                  
+                </div>
+               
+              </div>
+              <div x-data="{ open: false }">
+                <div class="flex py-3 px-6 items-center hover:bg-accent5 duration-300">
+                  <div class="flex items-center gap-2 w-1/4">
+                    <img src="./assets/images/coins/hydra.png" width="32" alt="" />
+                    <p class="text-neutral1 font-medium">HDR <span class="text-xs text-neutral4/70">Hydra</span></p>
+                  </div>
+                  <p class="w-1/4 text-accent1">0.83%~126.41%</p>
+                  <p class="w-1/4">Flexible/Fixed</p>
+                 
+                </div>
+                
+              </div>
+             
+              
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+    
+      <!-- faq -->
+      <section class="bg-accent2 relative overflow-hidden">
+        <div class="max-lg:hidden w-[350px] h-[350px] absolute bottom-[-6%] blur-[85px] left-[-12%] bg-accent1/50"></div>
+        <img class="max-lg:hidden absolute right-[2%] bottom-[3%]" src="./assets/images/faq-box.png" alt="" />
+        <div class="container relative z-[2] pt-120 pb-120 grid grid-cols-12 gap-6 xl:gap-10 items-center">
+          <div class="fade_up_anim col-span-12 lg:col-span-5 p-4 lg:p-6 xl:p-8 xxl:px-10 bg-accent5 border border-accent4 rounded-xl">
+            <p class="text-lg font-semibold mb-3">FAQ</p>
+            <h2 class="mb-4">Your questions <span class="h2 underline text-primary">answered.</span></h2>
+            <p class="text-neutral4 mb-6 text-lg xl:mb-10">Let's do our best to answer your most frequently asked questions.</p>
+            <div class="bg-accent6 p-5 rounded-xl">
+              <div class="flex gap-3 flex-wrap min-[420px]:flex-nowrap items-center mb-6">
+                <div class="size-20 shrink-0 rounded-xl border border-neutral1 f-center">
+                  <div class="size-8 rounded-full bg-primary text-accent5 text-2xl f-center">
+                    <i class="fa fa-question"></i>
+                  </div>
+                </div>
+                <div>
+                  <h5 class="mb-3">Still have questions?</h5>
+                  <p class="text-neutral4 text-sm">Can't find the answer you're looking for?Please chat to our friendly team!</p>
+                </div>
+              </div>
+              <a href="contact.html" class="bg-primary p-3 f-center text-lg rounded-xl font-semibold w-full">Get In Touch</a>
+            </div>
+          </div>
+          <div x-data="{opened:2 , handleOpen(i) {this.opened === i ? this.opened = 0 : this.opened = i}}" class="col-span-12 lg:col-span-7 p-4 lg:p-6 xl:p-8 xxl:px-10 bg-accent5 border border-accent4 rounded-xl flex flex-col gap-4 xxl:gap-7">
+            <div data-delay="0.5" :class="opened==1?'bg-accent6':''" class="fade_up_anim p-4 rounded-xl border border-accent4 cursor-pointer" @click="handleOpen(1)">
+              <div class="flex justify-between items-center">
+                <p class="text-sm lg:text-base xxl:text-xl font-medium">What is Bitcoin?</p>
+                <button :class="opened==1?'bg-primary rotate-180':'bg-accent6'" class="size-8 md:size-10 rounded-full f-center text-lg shrink-0 md:text-2xl duration-300">
+                  <i class="ti ti-chevron-down"></i>
+                </button>
+              </div>
+              <div x-show="opened === 1" x-collapse>
+                <p class="text-sm lg:text-base xxl:text-lg pt-3">Our cancellation policy varies depending on the service and service provider. Please check the terms before booking.</p>
+              </div>
+            </div>
+            <div data-delay="0.15" :class="opened==2?'bg-accent6':''" class="fade_up_anim p-4 rounded-xl border border-accent4 cursor-pointer" @click="handleOpen(2)">
+              <div class="flex justify-between items-center">
+                <p class="text-sm lg:text-base xxl:text-xl font-medium">Can I start trading with just $1?</p>
+                <button :class="opened==2?'bg-primary rotate-180':'bg-accent6'" class="size-8 md:size-10 rounded-full f-center text-lg shrink-0 md:text-2xl duration-300">
+                  <i class="ti ti-chevron-down"></i>
+                </button>
+              </div>
+              <div x-show="opened === 2" x-collapse>
+                <p class="text-sm lg:text-base xxl:text-lg pt-3">Our cancellation policy varies depending on the service and service provider. Please check the terms before booking.</p>
+              </div>
+            </div>
+            <div data-delay="0.25" :class="opened==3?'bg-accent6':''" class="fade_up_anim p-4 rounded-xl border border-accent4 cursor-pointer" @click="handleOpen(3)">
+              <div class="flex justify-between items-center">
+                <p class="text-sm lg:text-base xxl:text-xl font-medium">Is CritoX a safe cryptocurrency exchange?</p>
+                <button :class="opened==3?'bg-primary rotate-180':'bg-accent6'" class="size-8 md:size-10 rounded-full f-center text-lg shrink-0 md:text-2xl duration-300">
+                  <i class="ti ti-chevron-down"></i>
+                </button>
+              </div>
+              <div x-show="opened === 3" x-collapse>
+                <p class="text-sm lg:text-base xxl:text-lg pt-3">Our cancellation policy varies depending on the service and service provider. Please check the terms before booking.</p>
+              </div>
+            </div>
+            <div data-delay="0.35" :class="opened==4?'bg-accent6':''" class="fade_up_anim p-4 rounded-xl border border-accent4 cursor-pointer" @click="handleOpen(4)">
+              <div class="flex justify-between items-center">
+                <p class="text-sm lg:text-base xxl:text-xl font-medium">Is there an exchange limit between fiat and crypto?</p>
+                <button :class="opened==4?'bg-primary rotate-180':'bg-accent6'" class="size-8 md:size-10 rounded-full f-center text-lg shrink-0 md:text-2xl duration-300">
+                  <i class="ti ti-chevron-down"></i>
+                </button>
+              </div>
+              <div x-show="opened === 4" x-collapse>
+                <p class="text-sm lg:text-base xxl:text-lg pt-3">Our cancellation policy varies depending on the service and service provider. Please check the terms before booking.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- footer -->
+    <footer class="bg-accent5 relative overflow-hidden footer">
+        <div class="w-[150px] lg:w-[250px] h-[150px] lg:h-[250px] absolute bottom-[-6%] blur-[85px] left-[-9%] bg-primary/50"></div>
+        <div class="w-[150px] lg:w-[250px] h-[150px] lg:h-[250px] absolute top-[-6%] blur-[85px] right-[-8%] bg-accent1/50"></div>
+        <img class="max-[1700px]:hidden absolute left-0 bottom-0" src="./assets/images/footer-el-1.png" alt="" />
+        <img class="max-lg:hidden absolute right-1 bottom-0" src="./assets/images/footer-el-2.png" alt="" />
+        <img class="max-xl:hidden absolute right-0 top-2 animate-skew" src="./assets/images/how-start-el-2.png" alt="" />
+        <div class="pb-120 pt-120 relative z-[2] container grid grid-cols-12 xxl:grid-cols-10 gap-6 lg:divide-x divide-accent4">
+          <div class="fade_up_anim col-span-12 md:col-span-6 xl:col-span-3">
+            <h3 class="mb-4 xl:mb-6">Quick Links</h3>
+            <div class="grid grid-cols-2">
+              <div class="col-span-1 flex flex-col gap-4">
+                
+                <a href="sell-crypto.html" class="animated-link">Sell GiftCards</a>
+                <a href="" class="animated-link">Rates</a>
+                <a href="" class="animated-link">Earn</a>
+              </div>
+              <div class="col-span-1 flex flex-col gap-4">
+              
+                <a href="pricing-plan.html" class="animated-link">Sign-in</a>
+                <a href="contact.html" class="animated-link">Sign-up</a>
+              </div>
+            </div>
+          </div>
+          <div data-delay=".15" class="fade_up_anim col-span-12 md:col-span-6 xl:col-span-6 xxl:col-span-4">
+            <div class="text-center px-4 md:px-6 lg:px-10 xxl:px-16">
+              <h3 class="mb-4 xl:mb-6">Newsletter</h3>
+              <p class="text-neutral4 lg:text-lg mb-8 xl:mb-10">Welcome to Middleman</p>
+              <form @submit.prevent class="flex items-center">
+                <input type="email" placeholder="Enter Your Email..." class="w-full focus:border-primary bg-transparent rounded-full px-5 py-4 border border-accent4" required />
+                <button type="submit" aria-label="submit button" class="size-[56px] rounded-full bg-primary shrink-0 f-center text-xl"><i class="fa fa-arrow-circle-up"></i></button>
+              </form>
+            </div>
+          </div>
+          <div data-delay=".3" class="fade_up_anim col-span-12 xl:col-span-3">
+            <div class="text-center pl-4 lg:pl-6 xxl:pl-10 xxxl:pl-12">
+              <h3 class="mb-4 xl:mb-6">Follow Us</h3>
+              <div class="mb-7 xl:mb-10 flex justify-center gap-4">
+                <a class="social-link" href="#" aria-label="facebook link"><i class="fa fa-facebook"></i></a>
+                <a class="social-link" href="#" aria-label="twitch link"> <i class="fa fa-twitter"></i> </a>
+                <a class="social-link" href="#" aria-label="instagram link"> <i class="fa fa-instagram"></i></a>
+                <a class="social-link" href="#" aria-label="discord link"><i class="fa fa-telegram"></i></a>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+        <div class="py-5 xl:py-8 border-t border-accent4">
+          <div class="container text-center flex justify-center gap-2 sm:gap-3 items-center relative z-[2]">
+            <p class="text-xs sm:text-sm md:text-base xl:text-lg">Copyright @ <span id="year"></span> Middleman</p>
+            <span class="text-sm xl:text-xl">|</span>
+          </div>
+        </div>
+      </footer>
+      
+
+  </body>
+</html>

@@ -1,0 +1,40 @@
+
+.Pag {
+    text-align: center;
+    padding: 20px;
+}
+.dropdownP {
+    margin: 20px 0;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+table, th, td {
+    border: 1px solid #ddd;
+}
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+.pagination button {
+    padding: 10px 15px;
+    background-color: #EA6508;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+.pagination button:hover {
+    background-color: #d55407;
+}
+.pagination button.disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
